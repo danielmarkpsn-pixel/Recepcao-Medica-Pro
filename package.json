@@ -1,0 +1,24 @@
+{
+  "name": "recepcao-medica-pro",
+  "version": "1.0.0",
+  "description": "Sistema local de recepção médica para Windows",
+  "main": "src/main.js",
+  "author": "Daniel Marques via IA",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "br.com.recepcaomedicapro.app",
+    "productName": "Recepção Médica Pro",
+    "directories": { "output": "dist" },
+    "files": ["src/**/*", "package.json", "README.md"],
+    "win": { "target": ["nsis"], "artifactName": "Recepcao-Medica-Pro-Setup-${version}.${ext}" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true, "createStartMenuShortcut": true }
+  }
+}
