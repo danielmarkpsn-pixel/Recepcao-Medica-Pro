@@ -10,7 +10,7 @@ const dbPath = () => path.join(dataDir(), 'recepcao-data.json');
 function initialData() {
   return {
     version: 1,
-    settings: { clinicName: 'Clínica Favmed - Medicina Ocupacional' },
+    settings: { clinicName: 'Controle de Consulta' },
     users: [{ id: 'admin', username: 'admin', displayName: 'Administrador', role: 'admin', salt: '', passwordHash: '' }],
     patients: [], doctors: [], appointments: [], payments: [], audit: []
   };
@@ -30,7 +30,7 @@ function ensureData() {
 }
 function readData() {
   ensureData();
-  try { const data = JSON.parse(fs.readFileSync(dbPath(), 'utf8')); if (!data.settings) data.settings = {}; if (!data.settings.clinicName || data.settings.clinicName === 'Recepção Médica Pro') { data.settings.clinicName = 'Clínica Favmed - Medicina Ocupacional'; writeData(data); } return data; }
+  try { const data = JSON.parse(fs.readFileSync(dbPath(), 'utf8')); if (!data.settings) data.settings = {}; if (!data.settings.clinicName || ['Recepção Médica Pro', 'Clínica Favmed - Medicina Ocupacional', 'Clínica Favmed', 'Favmed'].includes(data.settings.clinicName)) { data.settings.clinicName = 'Controle de Consulta'; writeData(data); } return data; }
   catch { throw new Error('Não foi possível ler os dados locais. Restaure um backup válido.'); }
 }
 function writeData(data) {
@@ -144,7 +144,7 @@ ipcMain.handle('users:password', (_e, { userId, password }) => {
 });
 ipcMain.handle('settings:save', (_e, settings) => {
   const s = adminOnly(), d = readData();
-  d.settings.clinicName = String(settings.clinicName || 'Clínica Favmed - Medicina Ocupacional').slice(0,120);
+  d.settings.clinicName = String(settings.clinicName || 'Controle de Consulta').slice(0,120);
   audit(d, s, 'ALTERAR_CONFIGURACOES', d.settings.clinicName); writeData(d); return d.settings;
 });
 ipcMain.handle('backup:export', async () => {
