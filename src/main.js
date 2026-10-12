@@ -10,7 +10,7 @@ const dbPath = () => path.join(dataDir(), 'recepcao-data.json');
 function initialData() {
   return {
     version: 1,
-    settings: { clinicName: 'Recepção Médica Pro' },
+    settings: { clinicName: 'Clínica Favmed - Medicina Ocupacional' },
     users: [{ id: 'admin', username: 'admin', displayName: 'Administrador', role: 'admin', salt: '', passwordHash: '' }],
     patients: [], doctors: [], appointments: [], payments: [], audit: []
   };
@@ -30,7 +30,7 @@ function ensureData() {
 }
 function readData() {
   ensureData();
-  try { return JSON.parse(fs.readFileSync(dbPath(), 'utf8')); }
+  try { const data = JSON.parse(fs.readFileSync(dbPath(), 'utf8')); if (!data.settings) data.settings = {}; if (!data.settings.clinicName || data.settings.clinicName === 'Recepção Médica Pro') { data.settings.clinicName = 'Clínica Favmed - Medicina Ocupacional'; writeData(data); } return data; }
   catch { throw new Error('Não foi possível ler os dados locais. Restaure um backup válido.'); }
 }
 function writeData(data) {
@@ -98,9 +98,9 @@ function sanitizeRecord(collection, r) {
   if (!r || typeof r !== 'object') throw new Error('Registro inválido.');
   const out = {};
   const fields = {
-    patients: ['id','name','cpf','birthDate','phone','email','address','notes'],
+    patients: ['id','name','cpf','birthDate','phone','email','address','notes','company','occupation','emergencyContact','bloodType','allergies','medications','medicalHistory'],
     doctors: ['id','name','specialty','phone','email','registration'],
-    appointments: ['id','patientId','patientName','doctorId','doctorName','date','time','status','reason','notes'],
+    appointments: ['id','patientId','patientName','doctorId','doctorName','date','time','status','reason','notes','consultationRoom'],
     payments: ['id','patientId','patientName','appointmentId','date','amount','method','status','description']
   }[collection];
   for (const f of fields) if (f in r) out[f] = String(r[f] ?? '').slice(0, f === 'notes' || f === 'address' || f === 'reason' ? 2000 : 300);
@@ -144,7 +144,7 @@ ipcMain.handle('users:password', (_e, { userId, password }) => {
 });
 ipcMain.handle('settings:save', (_e, settings) => {
   const s = adminOnly(), d = readData();
-  d.settings.clinicName = String(settings.clinicName || 'Recepção Médica Pro').slice(0,120);
+  d.settings.clinicName = String(settings.clinicName || 'Clínica Favmed - Medicina Ocupacional').slice(0,120);
   audit(d, s, 'ALTERAR_CONFIGURACOES', d.settings.clinicName); writeData(d); return d.settings;
 });
 ipcMain.handle('backup:export', async () => {
