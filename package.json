@@ -1,9 +1,9 @@
 {
-  "name": "recepcao-medica-pro",
+  "name": "clinica-favmed-medicina-ocupacional",
   "version": "1.0.0",
-  "description": "Sistema local de recepção médica para Windows",
+  "description": "Sistema clínico local para recepção e medicina ocupacional",
   "main": "src/main.js",
-  "author": "Daniel Marques via IA",
+  "author": "Clínica Favmed",
   "license": "UNLICENSED",
   "scripts": {
     "start": "electron .",
@@ -14,8 +14,8 @@
     "electron-builder": "^26.0.12"
   },
   "build": {
-    "appId": "br.com.recepcaomedicapro.app",
-    "productName": "Recepção Médica Pro",
+    "appId": "br.com.clinicafavmed.medicinaocupacional",
+    "productName": "Clínica Favmed - Medicina Ocupacional",
     "directories": {
       "output": "dist"
     },
@@ -29,7 +29,7 @@
       "target": [
         "nsis"
       ],
-      "artifactName": "Recepcao-Medica-Pro-Setup-${version}.${ext}",
+      "artifactName": "Clinica-Favmed-Setup-${version}.${ext}",
       "icon": "assets/app-icon.ico"
     },
     "nsis": {
