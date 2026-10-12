@@ -24,7 +24,7 @@ function ensureData() {
     const data = initialData();
     const salt = crypto.randomBytes(16).toString('hex');
     data.users[0].salt = salt;
-    data.users[0].passwordHash = passwordHash('Trocar123!', salt);
+    data.users[0].passwordHash = passwordHash('admin', salt);
     fs.writeFileSync(dbPath(), JSON.stringify(data, null, 2), { mode: 0o600 });
   }
 }
@@ -47,6 +47,7 @@ function createWindow() {
   win = new BrowserWindow({
     width: 1440, height: 920, minWidth: 1080, minHeight: 700,
     backgroundColor: '#111315',
+    icon: path.join(__dirname, '..', 'assets', 'app-icon.ico'),
     webPreferences: { preload: path.join(__dirname, 'preload.js'), contextIsolation: true, nodeIntegration: false, sandbox: true }
   });
   win.loadFile(path.join(__dirname, 'index.html'));

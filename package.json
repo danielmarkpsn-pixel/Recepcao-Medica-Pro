@@ -16,9 +16,27 @@
   "build": {
     "appId": "br.com.recepcaomedicapro.app",
     "productName": "Recepção Médica Pro",
-    "directories": { "output": "dist" },
-    "files": ["src/**/*", "package.json", "README.md"],
-    "win": { "target": ["nsis"], "artifactName": "Recepcao-Medica-Pro-Setup-${version}.${ext}" },
-    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true, "createStartMenuShortcut": true }
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "package.json",
+      "README.md"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "artifactName": "Recepcao-Medica-Pro-Setup-${version}.${ext}",
+      "icon": "assets/app-icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
   }
 }

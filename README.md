@@ -19,7 +19,7 @@ Aplicativo desktop para Windows, com armazenamento local, destinado ao apoio adm
 - Usuário: `admin`
 - Senha inicial: `Trocar123!`
 
-**Altere a senha inicial imediatamente.** Não compartilhe o arquivo de dados nem os backups.
+**Importante:** altere a senha inicial assim que possível. A senha `admin` é simples e serve apenas para o primeiro acesso/teste. Não compartilhe o arquivo de dados nem os backups.
 
 ## Compilar pelo GitHub (sem instalar programas no PC)
 1. Crie um repositório novo no GitHub, por exemplo `Recepcao-Medica-Pro`.
@@ -60,3 +60,4 @@ Recepcao-Medica-Pro-v1.0/
 ├── .gitignore
 └── README.md
 ```
+\n## Identidade visual e créditos\n- A imagem fornecida foi adicionada como `assets/logo.png` e `assets/arte-exemplo.png`.\n- O ícone Windows é `assets/app-icon.ico`, gerado a partir da imagem fornecida.\n- Créditos exibidos no aplicativo: **Daniel Marques via IA**.\n

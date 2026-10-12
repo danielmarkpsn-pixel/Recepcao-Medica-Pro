@@ -8,20 +8,20 @@
 <body>
 <div id="loginView" class="login-shell">
   <div class="login-card">
-    <div class="brand-mark">✚</div><p class="eyebrow">GESTÃO CLÍNICA</p><h1>Recepção Médica <span>Pro</span></h1>
+    <img class="brand-logo" src="../assets/logo.png" alt="Logotipo Recepção Médica Pro"><p class="eyebrow">GESTÃO CLÍNICA</p><h1>Recepção Médica <span>Pro</span></h1>
     <p class="muted">Acesso local • Ambiente protegido</p>
     <form id="loginForm">
       <label>Usuário<input id="loginUser" autocomplete="username" required value="admin"></label>
-      <label>Senha<input id="loginPassword" type="password" autocomplete="current-password" required placeholder="Digite sua senha"></label>
+      <label>Senha<input id="loginPassword" type="password" autocomplete="current-password" required placeholder="Digite sua senha" value="admin"></label>
       <button class="primary full" type="submit">Entrar no sistema <span>→</span></button>
       <p id="loginError" class="error"></p>
     </form>
-    <div class="login-foot">Primeiro acesso: <b>admin</b> / <b>Trocar123!</b><br>Altere a senha assim que entrar.</div>
+    <div class="login-foot">Acesso inicial: <b>admin</b> / <b>admin</b><br>Altere a senha após o primeiro acesso.</div>
   </div>
 </div>
 <div id="appView" class="app-shell hidden">
   <aside class="sidebar">
-    <div class="side-brand"><div class="brand-mark small">✚</div><div><b>Recepção Médica</b><small>PRO · V1.0</small></div></div>
+    <div class="side-brand"><img class="side-logo" src="../assets/logo.png" alt="Logotipo"><div><b>Recepção Médica</b><small>PRO · V1.0</small></div></div>
     <div class="clinic-chip"><span class="live-dot"></span><span id="clinicSideName">Sua clínica</span></div>
     <nav id="nav">
       <button data-page="dashboard" class="nav-item active">▦ <span>Painel geral</span></button>
@@ -39,7 +39,7 @@
   <main class="main-area">
     <header class="topbar"><div><p class="eyebrow" id="dateLabel">GESTÃO DE RECEPÇÃO</p><h2 id="pageTitle">Painel geral</h2></div><div class="top-actions"><span class="secure-label">● Dados neste computador</span><button class="icon-btn" id="refreshBtn" title="Atualizar">↻</button></div></header>
     <section id="pageContent" class="content"></section>
-    <footer>Recepção Médica Pro <span>•</span> desenvolvido por Daniel Marques via IA <span>•</span> Uso local</footer>
+    <footer>Recepção Médica Pro <span>•</span> Daniel Marques via IA <span>•</span> Uso local</footer>
   </main>
 </div>
 <div id="modalRoot"></div><div id="toast" class="toast"></div>
