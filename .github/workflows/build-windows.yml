@@ -26,6 +26,6 @@ jobs:
       - name: Publicar instalador como artefato
         uses: actions/upload-artifact@v4
         with:
-          name: Recepcao-Medica-Pro-Windows
+          name: Clinica-Favmed-Windows
           path: dist/*.exe
           if-no-files-found: error
