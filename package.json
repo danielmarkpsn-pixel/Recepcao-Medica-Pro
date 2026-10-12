@@ -1,9 +1,9 @@
 {
-  "name": "clinica-favmed-medicina-ocupacional",
+  "name": "controle-de-consulta",
   "version": "1.0.0",
-  "description": "Sistema clínico local para recepção e medicina ocupacional",
+  "description": "Sistema local para cadastro de pacientes, agenda e controle de consultas",
   "main": "src/main.js",
-  "author": "Clínica Favmed",
+  "author": "Controle de Consulta",
   "license": "UNLICENSED",
   "scripts": {
     "start": "electron .",
@@ -14,8 +14,8 @@
     "electron-builder": "^26.0.12"
   },
   "build": {
-    "appId": "br.com.clinicafavmed.medicinaocupacional",
-    "productName": "Clínica Favmed - Medicina Ocupacional",
+    "appId": "br.com.controledeconsulta",
+    "productName": "Controle de Consulta",
     "directories": {
       "output": "dist"
     },
@@ -29,7 +29,7 @@
       "target": [
         "nsis"
       ],
-      "artifactName": "Clinica-Favmed-Setup-${version}.${ext}",
+      "artifactName": "Controle-de-Consulta-Setup-${version}.${ext}",
       "icon": "assets/app-icon.ico"
     },
     "nsis": {
