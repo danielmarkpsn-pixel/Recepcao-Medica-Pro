@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:">
-<title>Clínica Favmed - Medicina Ocupacional</title><link rel="stylesheet" href="styles.css">
+<title>Controle de Consulta</title><link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div id="loginView" class="login-shell">
   <div class="login-card">
-    <img class="brand-logo" src="../assets/logo.png" alt="Logotipo Clínica Favmed"><p class="eyebrow">MEDICINA OCUPACIONAL</p><h1>Clínica <span>Favmed</span></h1><p class="brand-subtitle">Medicina Ocupacional</p>
+    <div class="brand-mark" aria-label="Controle de Consulta">CC</div><p class="eyebrow">GESTÃO CLÍNICA</p><h1>Controle de <span>Consulta</span></h1><p class="brand-subtitle">Gestão de pacientes e atendimentos</p>
     <p class="muted">Acesso local • Ambiente protegido</p>
     <form id="loginForm">
       <label>Usuário<input id="loginUser" autocomplete="username" required value="admin"></label>
@@ -21,7 +21,7 @@
 </div>
 <div id="appView" class="app-shell hidden">
   <aside class="sidebar">
-    <div class="side-brand"><img class="side-logo" src="../assets/logo.png" alt="Logotipo Clínica Favmed"><div><b>Clínica Favmed</b><small>MEDICINA OCUPACIONAL</small></div></div>
+    <div class="side-brand"><div class="brand-mark small" aria-hidden="true">CC</div><div><b>Controle de Consulta</b><small>GESTÃO CLÍNICA</small></div></div>
     <div class="clinic-chip"><span class="live-dot"></span><span id="clinicSideName">Sua clínica</span></div>
     <nav id="nav">
       <button data-page="dashboard" class="nav-item active">▦ <span>Painel geral</span></button>
@@ -40,7 +40,7 @@
   <main class="main-area">
     <header class="topbar"><div><p class="eyebrow" id="dateLabel">GESTÃO DE RECEPÇÃO</p><h2 id="pageTitle">Painel geral</h2></div><div class="top-actions"><span class="secure-label">● Dados neste computador</span><button class="icon-btn" id="refreshBtn" title="Atualizar">↻</button></div></header>
     <section id="pageContent" class="content"></section>
-    <footer>Clínica Favmed - Medicina Ocupacional <span>•</span> Sistema local</footer>
+    <footer>Controle de Consulta <span>•</span> Sistema local</footer>
   </main>
 </div>
 <div id="modalRoot"></div><div id="toast" class="toast"></div>
