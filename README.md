@@ -1,4 +1,4 @@
-# Clínica Favmed - Medicina Ocupacional — V1.0
+# Controle de Consulta — V1.0
 
 Aplicativo desktop para Windows, com armazenamento local, destinado ao apoio administrativo da recepção de um consultório.
 
@@ -27,7 +27,7 @@ Aplicativo desktop para Windows, com armazenamento local, destinado ao apoio adm
 3. Abra a aba **Actions** no repositório.
 4. Se necessário, habilite GitHub Actions.
 5. Execute **Compilar aplicativo Windows** em **Run workflow**, ou faça um commit na branch `main`.
-6. Quando terminar, abra a execução concluída e baixe o artefato `Clinica-Favmed-Windows`.
+6. Quando terminar, abra a execução concluída e baixe o artefato `Controle-de-Consulta-Windows`.
 7. Dentro do artefato estará o instalador `.exe`.
 
 O GitHub Actions compila para Windows em uma máquina virtual hospedada pelo GitHub. O instalador é um artefato de teste; distribuição pública pode exigir assinatura de código para reduzir avisos do Windows.
@@ -42,13 +42,13 @@ Use **Configurações → Exportar backup** para guardar uma cópia em local seg
 - O login e os perfis controlam o acesso dentro do aplicativo, mas não substituem uma conta Windows protegida, criptografia de disco, antivírus, controle físico do computador e backup seguro.
 - Os dados locais e os backups JSON não são criptografados pelo aplicativo nesta versão. Proteja a conta Windows e a pasta de dados; não use dados reais sensíveis antes de validar a segurança e os requisitos legais aplicáveis.
 - A auditoria registra ações administrativas, mas não é um log inviolável.
-- As fichas desta versão são registros locais de apoio à recepção e à medicina ocupacional. O sistema não substitui um prontuário eletrônico clínico validado e não oferece integração com sistemas clínicos, convênios ou assinatura digital.
+- As fichas desta versão são registros locais de apoio à recepção e à gestão de consultas. O sistema não substitui um prontuário eletrônico clínico validado e não oferece integração com sistemas clínicos, convênios ou assinatura digital.
 - O perfil financeiro é restrito principalmente à área de pagamentos; permissões adicionais devem ser testadas antes do uso operacional.
 - Antes de usar com pacientes reais, valide o funcionamento, faça cópias de segurança e solicite avaliação de segurança/privacidade, inclusive quanto à LGPD.
 
 ## Estrutura
 ```text
-Recepcao-Medica-Pro-v1.0/
+Controle-de-Consulta-v1.0/
 ├── .github/workflows/build-windows.yml
 ├── src/
 │   ├── main.js
