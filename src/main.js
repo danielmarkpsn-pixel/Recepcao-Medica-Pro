@@ -98,7 +98,7 @@ function sanitizeRecord(collection, r) {
   if (!r || typeof r !== 'object') throw new Error('Registro inválido.');
   const out = {};
   const fields = {
-    patients: ['id','name','cpf','birthDate','phone','email','address','notes','company','occupation','emergencyContact','bloodType','allergies','medications','medicalHistory'],
+    patients: ['id','name','cpf','birthDate','phone','email','address','notes','convenio','convenioNumber','convenioValidity','company','occupation','emergencyContact','bloodType','allergies','medications','medicalHistory'],
     doctors: ['id','name','specialty','phone','email','registration'],
     appointments: ['id','patientId','patientName','doctorId','doctorName','date','time','status','reason','notes','consultationRoom'],
     payments: ['id','patientId','patientName','appointmentId','date','amount','method','status','description']
